@@ -1,0 +1,12 @@
+<mat-sidenav-container class="app-container">
+  <mat-sidenav #drawer mode="over">
+    <app-sidenav (close)="drawer.toggle()"></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-fullscreen-navigation></app-fullscreen-navigation>
+    <ng-template [ngIf]="(isHandset$ | async)">
+      <app-handset-navigation></app-handset-navigation>
+    </ng-template>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

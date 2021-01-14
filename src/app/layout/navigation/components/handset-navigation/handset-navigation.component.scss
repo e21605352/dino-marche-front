@@ -1,0 +1,36 @@
+mat-toolbar {
+  background-color: #ca7622;
+  height: 50px;
+  justify-content: center;
+}
+
+.nav-wrapper {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  height: 28px;
+}
+
+.mat-icon {
+  color: #fff;
+}
+
+.nav-actions .mat-icon-button {
+  margin-left: 10px;
+}
+
+::ng-deep .mat-badge-accent .mat-badge-content {
+  color: #ca7622;
+  background-color: #fff;
+}

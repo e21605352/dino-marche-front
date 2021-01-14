@@ -1,0 +1,23 @@
+.sidenav-closer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 15px 10px;
+}
+
+.mat-icon-button ::ng-deep .mat-button-focus-overlay {
+  display: none;
+}
+
+.mat-list-base {
+  padding: 0;
+}
+
+.mat-list-item h4 {
+  font-family: 'Mulish', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+mat-divider {
+  margin: 0 16px;
+}

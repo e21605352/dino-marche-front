@@ -1,0 +1,73 @@
+mat-toolbar {
+  background-color: #fff;
+  height: 100px;
+  justify-content: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul > li {
+  display: inline-block
+}
+
+li {
+  list-style: none;
+  margin: 0 15px;
+}
+
+a {
+  text-decoration: none;
+  color: #222222;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+a:hover { color:#ca7622; }
+
+.mat-toolbar h4 {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 50px;
+}
+
+.nav-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-wrapper > :only-child {
+  margin: auto;
+}
+
+.logo {
+  width: 200px;
+  max-width: 100%;
+}
+
+.mat-icon-button {
+  margin-left: 10px;
+}
+
+.icon {
+  height: 28px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+}
+
+::ng-deep .mat-badge-small.mat-badge-overlap.mat-badge-after .mat-badge-content {
+  right: -4px;
+  top: 1px;
+}

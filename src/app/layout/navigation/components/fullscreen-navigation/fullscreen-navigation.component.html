@@ -1,0 +1,24 @@
+<mat-toolbar>
+  <div class="nav-wrapper">
+    <img src="assets/img/logo.svg" class="logo">
+    <ng-template [ngIf]="(isHandset$ | async) === false">
+      <nav>
+        <ul>
+          <li *ngFor="let item of items">
+            <a href='http://www.google.fr'>
+              <h4>{{ item.title }}</h4>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button mat-icon-button>
+          <img src="assets/img/account.svg" class="icon">
+        </button>
+        <button mat-icon-button matBadge="+9" matBadgePosition="after" matBadgeColor="primary" matBadgeSize="small">
+          <img matBadge="15" matBadgeColor="warn" src="assets/img/shopping-cart.svg" class="icon">
+        </button>
+      </div>
+    </ng-template>
+  </div>
+</mat-toolbar>
