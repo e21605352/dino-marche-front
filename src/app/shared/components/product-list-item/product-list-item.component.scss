@@ -1,0 +1,26 @@
+.product-item {
+  min-height: 190px;
+}
+
+.price {
+  margin-top: 25px;
+}
+
+.product-content {
+  padding: 25px;
+}
+
+.mat-divider-vertical {
+  height: 20px;
+  margin: 0 5px;
+}
+.mat-caption {
+  color: #666666;
+}
+
+.product-content-description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

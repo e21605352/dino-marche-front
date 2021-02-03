@@ -17,5 +17,5 @@ export class NavigationBarService {
 
   opened(): boolean {
     return this.drawer.opened;
-  }       
+  }
 }

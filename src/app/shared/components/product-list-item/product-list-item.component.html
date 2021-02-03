@@ -1,0 +1,19 @@
+<div fxLayout="row" fxLayout.xs="column wrap" fxLayoutAlign="left center" class="product-item">
+  <div fxFlex>
+    <img [src]="product.image" height="180px" class="logo">
+  </div>
+  <div fxFlex="column" fxFlexFill fxFlexAlign="center" class="product-content">
+    <span class="mat-headline">{{ product.name }} <i>({{ product.alias }})</i></span>
+    <div fxLayout="row" fxLayoutAlign="left center" class="rate">
+      <bar-rating [rate]="product.rate" [max]="5" [readOnly]="true" theme=stars></bar-rating>
+      <mat-divider [vertical]="true"></mat-divider>
+      <span class="mat-caption">Basé sur {{ product.reviewsNumber }} avis</span>
+    </div>
+    <div class="product-content-description">
+      {{ product.description }}
+    </div>
+    <div class="price">
+      <span class="mat-h3">{{ product.price }} €</span>
+    </div>
+  </div>
+</div>
