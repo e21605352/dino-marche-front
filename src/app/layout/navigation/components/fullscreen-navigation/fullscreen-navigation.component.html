@@ -6,13 +6,13 @@
         <ul>
           <li *ngFor="let item of items">
             <a [href]='item.route'>
-              <h4>{{ item.title }}</h4>
+              <h4>{{ item.title }}</h4> 
             </a>
           </li>
         </ul>
       </nav>
-      <div class="nav-actions">
-        <button mat-icon-button>
+      <div class="nav-actions" routerLinkActive="active">
+        <button mat-icon-button (click)="onSubmitLogin()">
           <img src="assets/img/account.svg" class="icon">
         </button>
         <button mat-icon-button matBadge="+9" matBadgePosition="after" matBadgeColor="primary" matBadgeSize="small">

@@ -1,0 +1,21 @@
+label {
+  font-weight:bold;
+  font-size: larger;
+}
+
+.cadenas {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30em
+}
+
+.rotate div .cadenas {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+ 
+.rotate div:hover .cadenas {
+  -webkit-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+}

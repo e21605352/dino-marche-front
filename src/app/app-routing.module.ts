@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { SigninComponent } from './authentication/signin/signin.component';
 
 const routes: Routes = [
   {
@@ -20,7 +21,9 @@ const routes: Routes = [
         (m) => m.CollectionsModule
       ),
     data: { breadcrumb: { skip: true } }
-  }
+  },
+  { path: 'login', component: SigninComponent}
+
 ];
 
 @NgModule({
