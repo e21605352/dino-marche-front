@@ -1,1 +1,8 @@
-<p>product-list works!</p>
+<div class="app-product-list-sort-container">
+  <app-product-list-sort></app-product-list-sort>
+</div>
+<div fxLayout="column" *ngFor="let product of products; last as isLast">
+  <app-product-list-item [product]="product"></app-product-list-item>
+  <mat-divider *ngIf="!isLast"></mat-divider>
+</div>
+<mat-paginator [length]="resultsLength" [pageSize]="15"></mat-paginator>

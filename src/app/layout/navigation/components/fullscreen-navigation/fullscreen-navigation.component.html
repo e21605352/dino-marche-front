@@ -5,7 +5,7 @@
       <nav>
         <ul>
           <li *ngFor="let item of items">
-            <a href='http://www.google.fr'>
+            <a [href]='item.route'>
               <h4>{{ item.title }}</h4>
             </a>
           </li>

@@ -18,6 +18,10 @@
   font-weight: 600;
 }
 
+.mat-list-item:hover {
+  background-color: transparent;
+}
+
 mat-divider {
   margin: 0 16px;
 }

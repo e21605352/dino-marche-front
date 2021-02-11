@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutModule } from '@angular/cdk/layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -16,18 +17,19 @@ import { NavigationBarService } from 'src/app/shared/services/navigation-bar.ser
 import { NavigationComponent } from './navigation/view/navigation.component';
 import { HandsetNavigationComponent } from './navigation/components/handset-navigation/handset-navigation.component';
 import { FullscreenNavigationComponent } from './navigation/components/fullscreen-navigation/fullscreen-navigation.component';
-import { SidenavComponent } from './navigation/components/sidenav/sidenav.component';
+import { SideNavigationComponent } from './navigation/components/side-navigation/side-navigation.component';
 
 @NgModule({
   declarations: [
     NavigationComponent,
     HandsetNavigationComponent,
     FullscreenNavigationComponent,
-    SidenavComponent
+    SideNavigationComponent
   ],
   imports: [
     CommonModule,
     LayoutModule,
+    FlexLayoutModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,

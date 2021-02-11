@@ -1,0 +1,15 @@
+<div class="sidenav-closer">
+  <button mat-icon-button disableRipple aria-label="Fermer le menu de navigation" (click)="closeNav()">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+<nav>
+  <mat-nav-list role="list">
+    <ng-template ngFor let-last="last" let-item [ngForOf]="items">
+      <a mat-list-item role="listitem" [href]='item.route'>
+        <h4>{{ item.title }}</h4>
+      </a>
+      <mat-divider *ngIf="!last"></mat-divider>
+    </ng-template>
+  </mat-nav-list>
+</nav>
