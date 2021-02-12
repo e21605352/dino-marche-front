@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { BreadcrumbModule } from 'xng-breadcrumb';
 import { SharedModule } from '../../shared/shared.module';
@@ -21,6 +22,7 @@ export const collectionsRouteList: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(collectionsRouteList),
+    FlexLayoutModule,
     BreadcrumbModule,
     SharedModule
   ]
