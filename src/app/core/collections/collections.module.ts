@@ -8,6 +8,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { DinosaurComponent } from './dinosaur/dinosaur.component';
 import { NourritureComponent } from './nourriture/nourriture.component';
 import { GoodiesComponent } from './goodies/goodies.component';
+import { ContactComponent } from './contact/contact.component';
 
 export const collectionsRouteList: Routes = [
   {
@@ -30,11 +31,18 @@ export const collectionsRouteList: Routes = [
     data: {
       breadcrumb: 'Goodies'
     }
+  },
+  {
+    path: 'contact',
+    component: ContactComponent,
+    data: {
+      breadcrumb: 'contact'
+    }
   }
 ];
 
 @NgModule({
-  declarations: [DinosaurComponent, NourritureComponent, GoodiesComponent],
+  declarations: [DinosaurComponent, NourritureComponent, GoodiesComponent, ContactComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(collectionsRouteList),

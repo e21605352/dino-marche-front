@@ -19,6 +19,7 @@ import { ProductListItemComponent } from './components/product-list-item/product
 import { ProductListSortComponent } from './components/product-list-sort/product-list-sort.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { BreadcrumbHeaderGoodiesComponent } from './components/breadcrumb-header-goodies/breadcrumb-header-goodies.component';
+import { BreadcrumbHeaderContactComponent } from './components/breadcrumb-header-contact/breadcrumb-header-contact.component';
 
 
 
@@ -32,7 +33,8 @@ import { BreadcrumbHeaderGoodiesComponent } from './components/breadcrumb-header
     BreadcrumbHeaderLoginComponent,
     BreadcrumbHeaderHomeComponent,
     BreadcrumbHeaderFoodComponent,
-    BreadcrumbHeaderGoodiesComponent
+    BreadcrumbHeaderGoodiesComponent,
+    BreadcrumbHeaderContactComponent
   ],
   imports: [
     CommonModule,
@@ -54,7 +56,8 @@ import { BreadcrumbHeaderGoodiesComponent } from './components/breadcrumb-header
     BreadcrumbHeaderLoginComponent,
     BreadcrumbHeaderHomeComponent,
     BreadcrumbHeaderFoodComponent,
-    BreadcrumbHeaderGoodiesComponent
+    BreadcrumbHeaderGoodiesComponent,
+    BreadcrumbHeaderContactComponent
   ]
 })
 export class SharedModule {}

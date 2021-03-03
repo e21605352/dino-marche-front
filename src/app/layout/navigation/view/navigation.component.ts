@@ -32,8 +32,7 @@ export class NavigationComponent implements AfterViewInit {
     { route: '/collections/dinosaures', title: 'Dinosaures' },
     { route: '/collections/nourriture', title: 'Nourriture' },
     { route: '/collections/goodies', title: 'Goodies' },
-    { route: '/accueil/contact', title: 'Contact' },
-    { route: '/accueil/a_propos', title: 'A propos' }
+    { route: '/collections/contact', title: 'Contact' },
   ];
 
   constructor(
