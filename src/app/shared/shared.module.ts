@@ -10,6 +10,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { BarRatingModule } from 'ngx-bar-rating';
 import { BreadcrumbModule } from 'xng-breadcrumb';
+import { BreadcrumbHeaderHomeComponent } from './components/breadcrumb-header-home/breadcrumb-header-home.component';
 import { BreadcrumbHeaderLoginComponent } from './components/breadcrumb-header-login/breadcrumb-header-login.component';
 import { BreadcrumbHeaderComponent } from './components/breadcrumb-header/breadcrumb-header.component';
 import { ProductListHeaderComponent } from './components/product-list-header/product-list-header.component';
@@ -26,7 +27,8 @@ import { ProductListComponent } from './components/product-list/product-list.com
     ProductListHeaderComponent,
     ProductListSortComponent,
     BreadcrumbHeaderComponent,
-    BreadcrumbHeaderLoginComponent
+    BreadcrumbHeaderLoginComponent,
+    BreadcrumbHeaderHomeComponent
   ],
   imports: [
     CommonModule,
@@ -45,7 +47,8 @@ import { ProductListComponent } from './components/product-list/product-list.com
     ProductListItemComponent,
     ProductListComponent,
     BreadcrumbHeaderComponent,
-    BreadcrumbHeaderLoginComponent
+    BreadcrumbHeaderLoginComponent,
+    BreadcrumbHeaderHomeComponent
   ]
 })
 export class SharedModule {}
