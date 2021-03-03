@@ -1,0 +1,72 @@
+label {
+    font-weight:bold;
+    font-size: larger;
+  }
+
+.cadenas {
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 30em
+}
+
+.rotate div .cadenas {
+-webkit-transition: all 0.5s ease;
+transition: all 0.5s ease;
+}
+
+.rotate div:hover .cadenas {
+-webkit-transform: rotate(-15deg);
+transform: rotate(-15deg);
+}
+
+.fond {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: static;
+    margin-top: -3%;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+.menu-center {
+    margin-left: 40%;
+}
+
+.imgmenu {
+    margin-left:7%;
+    max-width: 125px;
+}
+
+.pmenu {
+    text-align: center;
+    margin-left: -13%;
+    max-width: 60%;
+}
+
+.imgmenu:hover {
+    position: relative;
+    margin-left:-2%;
+    max-width: 3000px;
+    width: 300px;
+    height:300px;
+}
+
+.imgmenuHor:hover {
+    position: relative;
+    margin-left:-7%;
+    max-width: 3000px;
+    width: 400px;
+    height:300px;
+}
+
+.imgmenuHor {
+    margin-left:7%;
+    max-width: 125px;
+}
