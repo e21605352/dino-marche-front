@@ -11,14 +11,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { BarRatingModule } from 'ngx-bar-rating';
 import { BreadcrumbModule } from 'xng-breadcrumb';
 import { BreadcrumbHeaderHomeComponent } from './components/breadcrumb-header-home/breadcrumb-header-home.component';
-import { BreadcrumbHeaderFoodComponent } from './components/breadcrumb-header-food/breadcrumb-header-food.component';
 import { BreadcrumbHeaderLoginComponent } from './components/breadcrumb-header-login/breadcrumb-header-login.component';
 import { BreadcrumbHeaderComponent } from './components/breadcrumb-header/breadcrumb-header.component';
 import { ProductListHeaderComponent } from './components/product-list-header/product-list-header.component';
 import { ProductListItemComponent } from './components/product-list-item/product-list-item.component';
 import { ProductListSortComponent } from './components/product-list-sort/product-list-sort.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
-import { BreadcrumbHeaderGoodiesComponent } from './components/breadcrumb-header-goodies/breadcrumb-header-goodies.component';
 import { BreadcrumbHeaderContactComponent } from './components/breadcrumb-header-contact/breadcrumb-header-contact.component';
 import { BreadcrumbHeaderCartComponent } from './components/breadcrumb-header-cart/breadcrumb-header-cart.component';
 
@@ -33,8 +31,6 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     BreadcrumbHeaderComponent,
     BreadcrumbHeaderLoginComponent,
     BreadcrumbHeaderHomeComponent,
-    BreadcrumbHeaderFoodComponent,
-    BreadcrumbHeaderGoodiesComponent,
     BreadcrumbHeaderContactComponent,
     BreadcrumbHeaderCartComponent,
     ProductDetailsComponent
@@ -58,8 +54,6 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     BreadcrumbHeaderComponent,
     BreadcrumbHeaderLoginComponent,
     BreadcrumbHeaderHomeComponent,
-    BreadcrumbHeaderFoodComponent,
-    BreadcrumbHeaderGoodiesComponent,
     BreadcrumbHeaderContactComponent,
     BreadcrumbHeaderCartComponent,
     ProductDetailsComponent

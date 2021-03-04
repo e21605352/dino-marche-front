@@ -6,33 +6,33 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BreadcrumbModule } from 'xng-breadcrumb';
 
 import { SharedModule } from '../../../shared/shared.module';
-import { DinosaurListComponent } from './dinosaur-list/dinosaur-list.component';
-import { DinosaurDetailsComponent } from './dinosaur-details/dinosaur-details.component';
+import { GoodiesListComponent } from './goodies-list/goodies-list.component';
+import { GoodiesDetailsComponent } from './goodies-details/goodies-details.component';
 
-export const dinosaurRouteList: Routes = [
+export const goodiesRouteList: Routes = [
   {
     path: '',
-    component: DinosaurListComponent
+    component: GoodiesListComponent
   },
   {
     path: ':id',
-    component: DinosaurDetailsComponent,
+    component: GoodiesDetailsComponent,
     data: {
       breadcrumb: {
-        alias: 'dinosaurName'
+        alias: 'goodiesName'
       }
     }
   }
 ];
 
 @NgModule({
-  declarations: [DinosaurListComponent, DinosaurDetailsComponent],
+  declarations: [GoodiesListComponent, GoodiesDetailsComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(dinosaurRouteList),
+    RouterModule.forChild(goodiesRouteList),
     FlexLayoutModule,
     BreadcrumbModule,
     SharedModule
   ]
 })
-export class DinosaurModule {}
+export class GoodiesModule {}

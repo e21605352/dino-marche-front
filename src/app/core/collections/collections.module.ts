@@ -3,54 +3,28 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { BreadcrumbModule } from 'xng-breadcrumb';
-import { NourritureComponent } from './nourriture/nourriture.component';
-import { GoodiesComponent } from './goodies/goodies.component';
-import { ContactComponent } from './contact/contact.component';
-import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 export const collectionsRouteList: Routes = [
   {
-    path: 'nourriture',
-    component: NourritureComponent,
-    data: {
-      breadcrumb: 'Nourriture'
-    }
-  },
-  {
-    path: 'goodies',
-    component: GoodiesComponent,
-    data: {
-      breadcrumb: 'Goodies'
-    }
-  },
-  {
-    path: 'contact',
-    component: ContactComponent,
-    data: {
-      breadcrumb: 'contact'
-    }
-  },
-  {
-    path: 'shopping-cart',
-    component: ShoppingCartComponent,
-    data: {
-      breadcrumb: 'cart'
-    }
-  },
-  {
+    path: 'dinosaures',
     loadChildren: () =>
       import('./dinosaur/dinosaur.module').then((m) => m.DinosaurModule),
     data: { breadcrumb: 'Dinosaures' }
+  },
+  {
+    path: 'nourriture',
+    loadChildren: () => import('./food/food.module').then((m) => m.FoodModule),
+    data: { breadcrumb: 'Nourriture' }
+  },
+  {
+    path: 'goodies',
+    loadChildren: () =>
+      import('./goodies/goodies.module').then((m) => m.GoodiesModule),
+    data: { breadcrumb: 'Goodies' }
   }
 ];
 
 @NgModule({
-  declarations: [
-    NourritureComponent,
-    GoodiesComponent,
-    ContactComponent,
-    ShoppingCartComponent
-  ],
   imports: [
     CommonModule,
     RouterModule.forChild(collectionsRouteList),

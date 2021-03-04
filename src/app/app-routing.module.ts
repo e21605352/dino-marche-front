@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SigninComponent } from './authentication/signin/signin.component';
 import { SignupComponent } from './authentication/signup/signup.component';
+import { ContactComponent } from './core/contact/contact.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,8 @@ const routes: Routes = [
     data: { breadcrumb: { skip: true } }
   },
   { path: 'login', component: SigninComponent },
-  { path: 'newAccount', component: SignupComponent }
+  { path: 'newAccount', component: SignupComponent },
+  { path: 'contact', component: ContactComponent }
 ];
 
 @NgModule({

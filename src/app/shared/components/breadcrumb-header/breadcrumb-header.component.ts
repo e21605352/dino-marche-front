@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-breadcrumb-header',
   templateUrl: './breadcrumb-header.component.html',
   styleUrls: ['./breadcrumb-header.component.scss']
 })
-export class BreadcrumbHeaderComponent implements OnInit {
+export class BreadcrumbHeaderComponent {
+  @Input() title!: string;
+  @Input() background!: string;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  getBackgroundImage(): string {
+    return `url('${this.background}');`;
   }
-
 }
