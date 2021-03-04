@@ -4,11 +4,11 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-signin',
-  templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.scss']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.scss']
 })
-export class SigninComponent implements OnInit {
+export class SignupComponent implements OnInit {
 
   formGroup!: FormGroup;
 
@@ -23,6 +23,10 @@ export class SigninComponent implements OnInit {
 
   initForm() {
     this.formGroup = new FormGroup({
+      prenom: new FormControl('', [Validators.required]),
+      nom: new FormControl('', [Validators.required]),
+      tel: new FormControl('', [Validators.required]),
+      login: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
     })
@@ -30,7 +34,7 @@ export class SigninComponent implements OnInit {
 
   onSubmitSigninForm() {
     if (this.formGroup.valid) {
-      this.authenticationService.login(this.formGroup.value).subscribe(result => {
+      this.authenticationService.createAccount(this.formGroup.value).subscribe(result => {
         if (result.success) {
           console.log(result);
           alert(result.message);
@@ -41,7 +45,4 @@ export class SigninComponent implements OnInit {
     }
   }
 
-  onSubmitNewAccount() {
-    this.router.navigateByUrl('/newAccount');
-  }
 }

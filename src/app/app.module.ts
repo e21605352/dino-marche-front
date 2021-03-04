@@ -13,12 +13,13 @@ import { SigninComponent } from './authentication/signin/signin.component';
 import { AppLayoutModule } from './layout/app-layout.module';
 import { paginatorFrench } from './material/mat-internationalization/paginator/paginator-fr';
 import { SharedModule } from './shared/shared.module';
+import { SignupComponent } from './authentication/signup/signup.component';
 
 
 registerLocaleData(localeFr, 'fr');
 
 @NgModule({
-  declarations: [AppComponent, SigninComponent],
+  declarations: [AppComponent, SigninComponent, SignupComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
