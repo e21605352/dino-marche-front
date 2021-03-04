@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Router } from '@angular/router';
+import { TokenManager } from '../tokenManager/TokenManager';
 
 @Component({
   selector: 'app-signin',
@@ -14,7 +15,9 @@ export class SigninComponent implements OnInit {
 
   constructor(
     private authenticationService: AuthenticationService,
-    private router: Router) { }
+    private router: Router,
+    private tokenManager: TokenManager
+  ) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -31,7 +34,7 @@ export class SigninComponent implements OnInit {
     if (this.formGroup.valid) {
       this.authenticationService.login(this.formGroup.value).subscribe(result => {
         if (result.success) {
-          //this.tokenManager.store(result);
+          this.tokenManager.store(result);
         } else {
           alert(result.message)
         }

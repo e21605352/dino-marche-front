@@ -14,6 +14,7 @@ import { AppLayoutModule } from './layout/app-layout.module';
 import { paginatorFrench } from './material/mat-internationalization/paginator/paginator-fr';
 import { SharedModule } from './shared/shared.module';
 import { SignupComponent } from './authentication/signup/signup.component';
+import { TokenManager } from './authentication/tokenManager/TokenManager';
 
 
 registerLocaleData(localeFr, 'fr');
@@ -29,7 +30,8 @@ registerLocaleData(localeFr, 'fr');
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TokenManager
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr' },
