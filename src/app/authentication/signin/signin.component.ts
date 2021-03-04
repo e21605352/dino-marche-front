@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Router } from '@angular/router';
+import { TokenManager } from '../tokenSession/TokenManager';
 
 @Component({
   selector: 'app-signin',
@@ -14,7 +15,8 @@ export class SigninComponent implements OnInit {
 
   constructor(
     private authenticationService: AuthenticationService,
-    private router: Router
+    private router: Router,
+    private tokenManager: TokenManager
   ) { }
 
   ngOnInit(): void {
@@ -32,8 +34,7 @@ export class SigninComponent implements OnInit {
     if (this.formGroup.valid) {
       this.authenticationService.login(this.formGroup.value).subscribe(result => {
         if (result.success) {
-          console.log(result);
-          alert(result.message);
+          this.tokenManager.store(result);
         } else {
           alert(result.message)
         }
@@ -42,6 +43,6 @@ export class SigninComponent implements OnInit {
   }
 
   onSubmitNewAccount() {
-    this.router.navigateByUrl('/newAccount');
+    this.router.navigateByUrl('/customer/create');
   }
 }

@@ -12,19 +12,19 @@
             <form [formGroup]="formGroup" (ngSubmit)="onSubmitSigninForm()">
                 <div class="form-group">
                     <label for="prenom">Prénom</label><br />
-                    <input type="prenom" id="prenom" class="form-control" placeholder="Jean" formControlName="prenom">
+                    <input type="text" id="prenom" class="form-control" placeholder="Jean" formControlName="prenom">
                 </div>
                 <div class="form-group">
                     <label for="nom">Nom</label><br />
-                    <input type="nom" id="nom" class="form-control" placeholder="Dujardin" formControlName="nom">
+                    <input type="text" id="nom" class="form-control" placeholder="Dujardin" formControlName="nom">
                 </div>
                 <div class="form-group">
                     <label for="tel">Telephone</label><br />
-                    <input type="tel" id="tel" class="form-control" placeholder="0102030405" formControlName="tel">
+                    <input type="text" id="tel" class="form-control" placeholder="0102030405" formControlName="tel">
                 </div>
                 <div class="form-group">
                     <label for="login">Identifiant</label><br />
-                    <input type="login" id="login" class="form-control" placeholder="example@example.com"
+                    <input type="text" id="login" class="form-control" placeholder="example@example.com"
                         formControlName="login">
                 </div>
                 <div class="form-group">
@@ -34,7 +34,7 @@
                 </div>
                 <div class="form-group">
                     <label for="password">Mot de passe</label><br />
-                    <input type="password" id="password" class="form-control" placeholder="Minimum 6 caractères"
+                    <input type="password" id="password" class="form-control" placeholder="Minimum 8 caractères"
                         formControlName="password">
                 </div>
                 <div class="text-center">
