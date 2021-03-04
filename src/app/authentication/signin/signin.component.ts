@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { TokenManager } from '../tokenManager/TokenManager';
 
 @Component({
@@ -34,8 +34,9 @@ export class SigninComponent implements OnInit {
     if (this.formGroup.valid) {
       this.authenticationService.login(this.formGroup.value).subscribe(result => {
         if (result.token) {
-          console.log(result.token)
-          this.tokenManager.store(result.token);
+         alert("Super");
+        } else {
+          alert("dommage");
         }
       })
     }
