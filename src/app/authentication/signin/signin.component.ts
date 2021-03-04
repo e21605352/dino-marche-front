@@ -43,6 +43,6 @@ export class SigninComponent implements OnInit {
   }
 
   onSubmitNewAccount() {
-    this.router.navigateByUrl('/customer/create');
+    this.router.navigateByUrl('/newAccount');
   }
 }
