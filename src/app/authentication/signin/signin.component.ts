@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Router } from '@angular/router';
-import { TokenManager } from '../tokenSession/TokenManager';
 
 @Component({
   selector: 'app-signin',
@@ -15,9 +14,7 @@ export class SigninComponent implements OnInit {
 
   constructor(
     private authenticationService: AuthenticationService,
-    private router: Router,
-    private tokenManager: TokenManager
-  ) { }
+    private router: Router) { }
 
   ngOnInit(): void {
     this.initForm();
