@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { baseUrl } from 'src/environments/environment';
@@ -8,21 +8,30 @@ import { TokenManager } from '../authentication/tokenManager/TokenManager';
   providedIn: 'root'
 })
 export class AuthenticationService {
-
-  private header: any;
+  private token: string;
 
   constructor(private http: HttpClient, private tokenManager: TokenManager) {
-    this.header = {
-      headers: new HttpHeaders()
-        .set('Authorization', `Basic ${btoa(tokenManager.retrieve())}`)
-    }
+    this.token = tokenManager.retrieve() || "";
   }
 
   login(data: any): Observable<any> {
-    return this.http.post(`${baseUrl}customer`, data, this.header);
+    const o = this.http.post(`${baseUrl}customer`, data, {
+      headers: {
+        "Authorization": this.token,
+      },
+    });
+    o.subscribe((data) => {
+      this.token = (data as { token: string }).token;
+      this.tokenManager.store((data as { token: string }).token);
+    });
+    return o;
   }
 
   createAccount(data: any): Observable<any> {
-    return this.http.post(`${baseUrl}customer/create`, data, this.header);
+    return this.http.post(`${baseUrl}customer/create`, data, {
+      headers: {
+        "Authorization": this.token,
+      },
+    });
   }
 }

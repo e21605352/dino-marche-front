@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-signup',
@@ -35,10 +35,10 @@ export class SignupComponent implements OnInit {
   onSubmitSigninForm() {
     if (this.formGroup.valid) {
       this.authenticationService.createAccount(this.formGroup.value).subscribe(result => {
-        if (result.success) {
+        if (result.token) {
           this.router.navigateByUrl('/login');
         } else {
-          alert(result.message);
+          alert("dommage");
         }
       })
     }
