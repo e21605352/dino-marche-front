@@ -25,7 +25,7 @@ export class SigninComponent implements OnInit {
 
   initForm() {
     this.formGroup = new FormGroup({
-      email: new FormControl('', [Validators.required]),
+      login: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
     })
   }
