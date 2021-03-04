@@ -1,29 +1,38 @@
 <app-breadcrumb-header-login></app-breadcrumb-header-login>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<div class="form block">
 
-<div class=" form block">
-  
-      <div class="container-fluid  " style="background-image:  url('assets/img/jungle.jpg');"><div class="container col-md-10 col-md-offset-1" style="background-color: rgba(255, 255, 255, 0.3);">
-        <div class="rotate">
-          <div>
+  <div class="container-fluid  " style="background-image:  url('assets/img/jungle.jpg');">
+    <div class="container col-md-10 col-md-offset-1" style="background-color: rgba(255, 255, 255, 0.3);">
+      <div class="rotate">
+        <div>
           <img class="cadenas" src="assets/img/cadenas.png">
-          </div></div>
-        <form [formGroup]="formGroup" (ngSubmit)="onSubmitSigninForm()">
+        </div>
+      </div>
+      <form [formGroup]="formGroup" (ngSubmit)="onSubmitSigninForm()">
         <div class="form-group">
           <label for="email">Adresse email</label><br />
           <input type="email" id="email" class="form-control" placeholder="example@example.com" formControlName="email">
         </div>
         <div class="form-group">
           <label for="password">Mot de passe</label><br />
-          <input type="password" id="password" class="form-control" placeholder="Minimum 6 caractères" formControlName="password">
+          <input type="password" id="password" class="form-control" placeholder="Minimum 6 caractères"
+            formControlName="password">
         </div>
         <div class="text-center">
-        <button  class="btn btn-success" type="submit" >Connexion</button> 
-        <br/>
-        <br/>
+          <button class="btn btn-success" type="submit">Connexion</button>
+          <br />
+          <br />
         </div>
       </form>
-      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
-    <br/>
-    
-    
+  </div>

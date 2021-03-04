@@ -6,7 +6,7 @@
         <ul>
           <li *ngFor="let item of items">
             <a [href]='item.route'>
-              <h4>{{ item.title }}</h4> 
+              <h4>{{ item.title }}</h4>
             </a>
           </li>
         </ul>
@@ -15,7 +15,8 @@
         <button mat-icon-button (click)="onSubmitLogin()">
           <img src="assets/img/account.svg" class="icon">
         </button>
-        <button mat-icon-button matBadge="+9" matBadgePosition="after" matBadgeColor="primary" matBadgeSize="small">
+        <button mat-icon-button matBadge="" matBadgePosition="after" matBadgeColor="primary" matBadgeSize="small"
+          (click)="onSubmitCart()">
           <img matBadge="15" matBadgeColor="warn" src="assets/img/shopping-cart.svg" class="icon">
         </button>
       </div>

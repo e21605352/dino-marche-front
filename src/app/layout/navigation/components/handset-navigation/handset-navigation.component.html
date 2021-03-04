@@ -4,10 +4,11 @@
       <mat-icon>menu</mat-icon>
     </button>
     <div class="nav-actions">
-      <button mat-icon-button>
+      <button mat-icon-button (click)="onSubmitLogin()">
         <img src="assets/img/account_white.svg" class="icon">
       </button>
-      <button mat-icon-button matBadge="+9" matBadgePosition="after" matBadgeSize="small" matBadgeColor="accent">
+      <button mat-icon-button matBadge="" matBadgePosition="after" matBadgeSize="small" matBadgeColor="accent"
+        (click)="onSubmitCart()">
         <img matBadge="15" matBadgeColor="warn" src="assets/img/shopping-cart_white.svg" class="icon">
       </button>
     </div>

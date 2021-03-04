@@ -9,6 +9,7 @@ import { DinosaurComponent } from './dinosaur/dinosaur.component';
 import { NourritureComponent } from './nourriture/nourriture.component';
 import { GoodiesComponent } from './goodies/goodies.component';
 import { ContactComponent } from './contact/contact.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 export const collectionsRouteList: Routes = [
   {
@@ -38,11 +39,18 @@ export const collectionsRouteList: Routes = [
     data: {
       breadcrumb: 'contact'
     }
+  },
+  {
+    path: 'shopping-cart',
+    component: ShoppingCartComponent,
+    data: {
+      breadcrumb: 'cart'
+    }
   }
 ];
 
 @NgModule({
-  declarations: [DinosaurComponent, NourritureComponent, GoodiesComponent, ContactComponent],
+  declarations: [DinosaurComponent, NourritureComponent, GoodiesComponent, ContactComponent, ShoppingCartComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(collectionsRouteList),
@@ -51,4 +59,4 @@ export const collectionsRouteList: Routes = [
     SharedModule
   ]
 })
-export class CollectionsModule {}
+export class CollectionsModule { }

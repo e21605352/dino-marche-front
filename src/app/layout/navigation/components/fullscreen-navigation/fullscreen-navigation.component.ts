@@ -14,13 +14,17 @@ export class FullscreenNavigationComponent {
   isHandset$: Observable<boolean> = this.handsetLayoutService.isHandset$;
   items!: INavigationItem[];
 
-  constructor(private handsetLayoutService: HandsetLayoutService, private router:Router) {  }
+  constructor(private handsetLayoutService: HandsetLayoutService, private router: Router) { }
 
   setItems(items: INavigationItem[]): void {
     this.items = items;
   }
 
-  onSubmitLogin(){
+  onSubmitLogin() {
     this.router.navigateByUrl('/login');
+  }
+
+  onSubmitCart() {
+    this.router.navigateByUrl('/collections/shopping-cart');
   }
 }
