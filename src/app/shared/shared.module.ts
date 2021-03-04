@@ -20,6 +20,7 @@ import { ProductListSortComponent } from './components/product-list-sort/product
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { BreadcrumbHeaderGoodiesComponent } from './components/breadcrumb-header-goodies/breadcrumb-header-goodies.component';
 import { BreadcrumbHeaderContactComponent } from './components/breadcrumb-header-contact/breadcrumb-header-contact.component';
+import { BreadcrumbHeaderCartComponent } from './components/breadcrumb-header-cart/breadcrumb-header-cart.component';
 
 
 
@@ -34,7 +35,8 @@ import { BreadcrumbHeaderContactComponent } from './components/breadcrumb-header
     BreadcrumbHeaderHomeComponent,
     BreadcrumbHeaderFoodComponent,
     BreadcrumbHeaderGoodiesComponent,
-    BreadcrumbHeaderContactComponent
+    BreadcrumbHeaderContactComponent,
+    BreadcrumbHeaderCartComponent
   ],
   imports: [
     CommonModule,
@@ -57,7 +59,8 @@ import { BreadcrumbHeaderContactComponent } from './components/breadcrumb-header
     BreadcrumbHeaderHomeComponent,
     BreadcrumbHeaderFoodComponent,
     BreadcrumbHeaderGoodiesComponent,
-    BreadcrumbHeaderContactComponent
+    BreadcrumbHeaderContactComponent,
+    BreadcrumbHeaderCartComponent
   ]
 })
-export class SharedModule {}
+export class SharedModule { }
