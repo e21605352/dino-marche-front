@@ -39,7 +39,7 @@ export class SignupComponent implements OnInit {
           console.log(result);
           alert(result.message);
         } else {
-          alert(result.message)
+          alert(result.message);
         }
       })
     }
