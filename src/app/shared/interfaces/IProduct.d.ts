@@ -1,3 +1,5 @@
+import type { productType } from '../../types/productType';
+
 export interface IProductItem {
   id?: string;
   image: string;
@@ -7,4 +9,5 @@ export interface IProductItem {
   rate: number;
   reviewsNumber: number;
   price: number;
+  type: productType;
 }

@@ -24,7 +24,8 @@ export class DinosaurListComponent implements OnInit {
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien',
         rate: 3,
         reviewsNumber: 54,
-        price: 35434
+        price: 35434,
+        type: 'Dinosaur'
       },
       {
         id: '2',
@@ -35,7 +36,8 @@ export class DinosaurListComponent implements OnInit {
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien',
         rate: 3,
         reviewsNumber: 54,
-        price: 654
+        price: 654,
+        type: 'Dinosaur'
       },
       {
         id: '3',
@@ -46,7 +48,8 @@ export class DinosaurListComponent implements OnInit {
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien',
         rate: 3,
         reviewsNumber: 54,
-        price: 4174
+        price: 4174,
+        type: 'Dinosaur'
       },
       {
         id: '4',
@@ -57,7 +60,8 @@ export class DinosaurListComponent implements OnInit {
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien',
         rate: 3,
         reviewsNumber: 54,
-        price: 333
+        price: 333,
+        type: 'Dinosaur'
       },
       {
         id: '5',
@@ -68,7 +72,8 @@ export class DinosaurListComponent implements OnInit {
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien',
         rate: 3,
         reviewsNumber: 54,
-        price: 2651
+        price: 2651,
+        type: 'Dinosaur'
       }
     ];
   }
