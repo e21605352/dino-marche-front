@@ -1,4 +1,5 @@
 export interface IProductItem {
+  id?: string;
   image: string;
   name: string;
   alias: string;

@@ -3,8 +3,10 @@
     <img [src]="product.image" height="180px" class="logo">
   </div>
   <div fxFlex="column" fxFlexFill fxFlexAlign="center" class="product-content">
-    <span class="mat-headline">{{ product.name }} <i>({{ product.alias }})</i></span>
-    <div fxLayout="row" fxLayoutAlign="left center" class="rate">
+    <a [href]="route">
+      <span class="mat-headline">{{ product.name }} <i>({{ product.alias }})</i></span>
+    </a>
+    <div fxLayout="row" fxLayoutAlign="left center">
       <bar-rating [rate]="product.rate" [max]="5" [readOnly]="true" theme=stars></bar-rating>
       <mat-divider [vertical]="true"></mat-divider>
       <span class="mat-caption">Basé sur {{ product.reviewsNumber }} avis</span>

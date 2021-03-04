@@ -1,15 +1,15 @@
 <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="0" fxLayout.xs="column"
   fxLayoutAlign.xs="center center" fxLayoutGap.xs="10px" class="container">
-  <span>45 produits existants</span>
+  <span>{{ productsNumber }} produits existants</span>
   <div>
     <label for="SortBy" fxShow.xs="false">Trier par : </label>
-    <select name="SortBy" id="SortBy" style="width: 62px;">
-      <option value="title-ascending" selected="selected">Trie</option>
-      <option value="title-ascending">Alphabetique, A-Z</option>
-      <option value="title-descending">Alphabetique, Z-A</option>
-      <option value="price-ascending">Prix croissant</option>
-      <option value="price-descending">Prix décroissant</option>
-      <option value="created-descending">Dernières nouveautées</option>
+    <select name="SortBy" id="SortBy" (change)="sortChanged($event.target.value)" style="width: 62px;">
+      <option value="none" selected="selected">Trie</option>
+      <option value="titleAscending">Alphabetique, A-Z</option>
+      <option value="titleDescending">Alphabetique, Z-A</option>
+      <option value="priceAscending">Prix croissant</option>
+      <option value="priceDescending">Prix décroissant</option>
+      <option value="createdDescending">Dernières nouveautées</option>
     </select>
   </div>
 </div>

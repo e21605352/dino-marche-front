@@ -8,4 +8,5 @@ import { IProductItem as Product } from '../../interfaces/IProduct';
 })
 export class ProductListItemComponent {
   @Input() product!: Product;
+  @Input() route!: string;
 }

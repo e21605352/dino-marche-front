@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DinosaurComponent } from './dinosaur.component';
+import { DinosaurDetailsComponent } from './dinosaur-details.component';
 
-describe('DinosaurComponent', () => {
-  let component: DinosaurComponent;
-  let fixture: ComponentFixture<DinosaurComponent>;
+describe('DinosaurDetailsComponent', () => {
+  let component: DinosaurDetailsComponent;
+  let fixture: ComponentFixture<DinosaurDetailsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DinosaurComponent ]
+      declarations: [ DinosaurDetailsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DinosaurComponent);
+    fixture = TestBed.createComponent(DinosaurDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

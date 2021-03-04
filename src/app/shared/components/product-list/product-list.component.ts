@@ -1,8 +1,8 @@
-import { Component, ViewChild, AfterViewInit, OnInit } from '@angular/core';
-
+import { Component, Input, ViewChild, OnInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 
 import { IProductItem as Product } from '../../interfaces/IProduct';
+import { Sort } from '../../types/Sort';
 
 @Component({
   selector: 'app-product-list',
@@ -10,87 +10,104 @@ import { IProductItem as Product } from '../../interfaces/IProduct';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
+  @Input() products!: Product[];
+  @Input() route!: string;
+
+  displayedProducts!: Product[];
+  pageSize = 3;
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  products: Product[] = [];
-  resultsLength = 0;
-  isLoadingResults = true;
-
   ngOnInit(): void {
-    this.products = [
-      {
-        image: 'assets/img/tyrannosaurus_rex.png',
-        name: 'Tyrannosaurus rex',
-        alias: 'Lézard à bras',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien',
-        rate: 3,
-        reviewsNumber: 54,
-        price: 1500
-      },
-      {
-        image: 'assets/img/tyrannosaurus_rex.png',
-        name: 'Tyrannosaurus rex',
-        alias: 'Lézard à bras',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien',
-        rate: 3,
-        reviewsNumber: 54,
-        price: 1500
-      },
-      {
-        image: 'assets/img/tyrannosaurus_rex.png',
-        name: 'Tyrannosaurus rex',
-        alias: 'Lézard à bras',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien',
-        rate: 3,
-        reviewsNumber: 54,
-        price: 1500
-      },
-      {
-        image: 'assets/img/tyrannosaurus_rex.png',
-        name: 'Tyrannosaurus rex',
-        alias: 'Lézard à bras',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien',
-        rate: 3,
-        reviewsNumber: 54,
-        price: 1500
-      },
-      {
-        image: 'assets/img/tyrannosaurus_rex.png',
-        name: 'Tyrannosaurus rex',
-        alias: 'Lézard à bras',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien',
-        rate: 3,
-        reviewsNumber: 54,
-        price: 1500
-      },
-      {
-        image: 'assets/img/tyrannosaurus_rex.png',
-        name: 'Tyrannosaurus rex',
-        alias: 'Lézard à bras',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien',
-        rate: 3,
-        reviewsNumber: 54,
-        price: 1500
-      },
-      {
-        image: 'assets/img/tyrannosaurus_rex.png',
-        name: 'Tyrannosaurus rex',
-        alias: 'Lézard à bras',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien',
-        rate: 3,
-        reviewsNumber: 54,
-        price: 1500
-      }
-    ];
-    this.resultsLength = this.products.length;
+    this.updatePagination(0);
+  }
+  /**
+   * Met à jour les produits affichés avec la pagination.
+   * @param pageIndex
+   */
+  updatePagination(pageIndex: number): void {
+    const first = pageIndex * this.pageSize;
+    const last = (pageIndex + 1) * this.pageSize;
+    this.displayedProducts = this.products.slice(first, last);
   }
 
-  ngAfterViewInit() {}
+  getItemRoute(item: Product): string {
+    return `${this.route}/${item.id}`;
+  }
+
+  sortProducts(sort: Sort): void {
+    this[sort]();
+
+    const pageIndex = 0;
+    this.updatePagination(pageIndex);
+    this.paginator.pageIndex = pageIndex;
+  }
+
+  none(): void {
+    // Do nothing
+  }
+
+  titleAscending(): void {
+    this.products.sort(function (a, b) {
+      const nameA = a.name.toUpperCase();
+      const nameB = b.name.toUpperCase();
+
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      return 0;
+    });
+  }
+
+  titleDescending(): void {
+    this.products.sort(function (a, b) {
+      const nameA = a.name.toUpperCase();
+      const nameB = b.name.toUpperCase();
+
+      if (nameA > nameB) {
+        return -1;
+      }
+      if (nameA < nameB) {
+        return 1;
+      }
+      return 0;
+    });
+  }
+
+  priceAscending(): void {
+    this.products.sort(function (a, b) {
+      const priceA = a.price;
+      const priceB = b.price;
+
+      if (priceA < priceB) {
+        return -1;
+      }
+      if (priceA > priceB) {
+        return 1;
+      }
+      return 0;
+    });
+  }
+
+  priceDescending(): void {
+    this.products.sort(function (a, b) {
+      const priceA = a.price;
+      const priceB = b.price;
+
+      if (priceA > priceB) {
+        return -1;
+      }
+      if (priceA < priceB) {
+        return 1;
+      }
+      return 0;
+    });
+  }
+
+  lastCreated(): void {
+    // TODO
+  }
 }

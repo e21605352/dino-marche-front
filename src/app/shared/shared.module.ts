@@ -22,7 +22,7 @@ import { BreadcrumbHeaderGoodiesComponent } from './components/breadcrumb-header
 import { BreadcrumbHeaderContactComponent } from './components/breadcrumb-header-contact/breadcrumb-header-contact.component';
 import { BreadcrumbHeaderCartComponent } from './components/breadcrumb-header-cart/breadcrumb-header-cart.component';
 
-
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,8 @@ import { BreadcrumbHeaderCartComponent } from './components/breadcrumb-header-ca
     BreadcrumbHeaderFoodComponent,
     BreadcrumbHeaderGoodiesComponent,
     BreadcrumbHeaderContactComponent,
-    BreadcrumbHeaderCartComponent
+    BreadcrumbHeaderCartComponent,
+    ProductDetailsComponent
   ],
   imports: [
     CommonModule,
@@ -60,7 +61,8 @@ import { BreadcrumbHeaderCartComponent } from './components/breadcrumb-header-ca
     BreadcrumbHeaderFoodComponent,
     BreadcrumbHeaderGoodiesComponent,
     BreadcrumbHeaderContactComponent,
-    BreadcrumbHeaderCartComponent
+    BreadcrumbHeaderCartComponent,
+    ProductDetailsComponent
   ]
 })
-export class SharedModule { }
+export class SharedModule {}

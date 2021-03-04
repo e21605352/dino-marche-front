@@ -1,0 +1,24 @@
+<div fxLayout="row" fxLayout.lt-md="column wrap" fxLayoutGap="40px" fxLayoutGap.lt-md="20px">
+  <div fxFlex fxLayoutAlign="center start">
+    <div fxLayoutAlign="center start" style="background-color: #fcfaf6;">
+      <img src="assets/img/tyrannosaurus_rex.png" width="90%" height="auto" class="m-t-20 m-b-20">
+    </div>
+  </div>
+  <div fxFlex fxLayout="column">
+    <h1 class="m-t-0 m-b-0">{{ product.name }}</h1>
+    <div fxLayout="row" fxLayoutAlign="left center" class="rate">
+      <bar-rating rate="3" [max]="5" [readOnly]="true" theme=stars></bar-rating>
+      <mat-divider [vertical]="true"></mat-divider>
+      <span class="mat-caption">Basé sur {{ product.reviewsNumber }} avis</span>
+    </div>
+    <p>{{ product.description }}</p>
+    <mat-divider></mat-divider>
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="p-t-10">
+      <div class="mat-h3 m-b-0">{{ product.price }} €</div>
+      <button mat-flat-button color="primary">Ajouter au panier</button>
+    </div>
+    <div fxLayoutAlign="end center" class="m-t-20">
+      <img src="assets/img/payment-secure.png" height="50px">
+    </div>
+  </div>
+</div>

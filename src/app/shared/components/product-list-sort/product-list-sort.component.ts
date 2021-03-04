@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Sort } from '../../types/Sort';
 
 @Component({
   selector: 'app-product-list-sort',
   templateUrl: './product-list-sort.component.html',
   styleUrls: ['./product-list-sort.component.scss']
 })
-export class ProductListSortComponent implements OnInit {
+export class ProductListSortComponent {
+  @Input() productsNumber!: number;
+  @Output() sort: EventEmitter<Sort> = new EventEmitter();
 
-  constructor() { }
-
-  ngOnInit(): void {
+  sortChanged(selectedSort: string): void {
+    this.sort.emit(selectedSort as Sort);
   }
-
 }
