@@ -33,10 +33,9 @@ export class SigninComponent implements OnInit {
   onSubmitSigninForm() {
     if (this.formGroup.valid) {
       this.authenticationService.login(this.formGroup.value).subscribe(result => {
-        if (result.success) {
-          this.tokenManager.store(result);
-        } else {
-          alert(result.message)
+        if (result.token) {
+          console.log(result.token)
+          this.tokenManager.store(result.token);
         }
       })
     }

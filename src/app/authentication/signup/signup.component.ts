@@ -37,7 +37,6 @@ export class SignupComponent implements OnInit {
       this.authenticationService.createAccount(this.formGroup.value).subscribe(result => {
         if (result.success) {
           this.router.navigateByUrl('/login');
-          alert(result.message);
         } else {
           alert(result.message);
         }
