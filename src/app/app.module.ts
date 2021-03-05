@@ -30,7 +30,8 @@ registerLocaleData(localeFr, 'fr');
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    TokenManager
+    TokenManager,
+    SharedModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr' },
@@ -38,4 +39,4 @@ registerLocaleData(localeFr, 'fr');
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
