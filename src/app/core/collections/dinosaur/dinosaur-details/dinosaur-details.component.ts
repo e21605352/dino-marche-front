@@ -18,7 +18,7 @@ export class DinosaurDetailsComponent implements OnInit {
     private productService: ProductService,
     private breadcrumbService: BreadcrumbService,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.retrieveProduct(this.route.snapshot.paramMap.get('id') as string);
@@ -43,7 +43,14 @@ export class DinosaurDetailsComponent implements OnInit {
       rate: 3,
       reviewsNumber: 54,
       price: 2651,
-      type: 'Dinosaur'
+      type: 'Dinosaur',
+      reviews: [
+        {
+          rate: 4,
+          title: "vraiment bien",
+          description: "bla bla bla "
+        }
+      ]
     };
   }
 
