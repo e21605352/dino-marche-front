@@ -1,0 +1,19 @@
+<div fxLayout="row" fxLayout.xs="column wrap" fxLayoutAlign="left center" class="product-item">
+  <div fxFlex>
+    <img src="assets/img/tyrannosaurus_rex.png" height="180px" class="logo">
+  </div>
+  <div fxFlex="column" fxFlexFill fxFlexAlign="center" class="product-content">
+    <div class="mat-headline m-t-0 m-b-0">Nom produit</div>
+    <div fxLayout="row" fxLayoutAlign="left center">
+      <bar-rating rate="3" [max]="5" [readOnly]="true" theme=stars></bar-rating>
+      <mat-divider [vertical]="true"></mat-divider>
+      <span class="mat-caption">Basé sur nombre avis</span>
+    </div>
+    <p class="product-content-description m-b-25">
+      Description produit
+    </p>
+    <div fxLayout="row">
+      <span class="mat-h3 m-r-20">Prix : 1 €</span>
+      <div class="mat-h3"> Quantité : 1</div>
+    </div>
+  </div>

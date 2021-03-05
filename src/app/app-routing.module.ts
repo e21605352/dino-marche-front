@@ -4,6 +4,7 @@ import { SigninComponent } from './authentication/signin/signin.component';
 import { SignupComponent } from './authentication/signup/signup.component';
 import { ContactComponent } from './core/contact/contact.component';
 import { NotFoundComponent } from 'src/app/layout/not-found/not-found.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -23,6 +24,14 @@ const routes: Routes = [
         (m) => m.CollectionsModule
       ),
     data: { breadcrumb: { skip: true } }
+  },
+  {
+    path: 'panier',
+    loadChildren: () =>
+      import('./core/shopping-cart/shopping-cart.module').then(
+        (m) => m.ShoppingCartModule
+      ),
+    data: { breadcrumb: 'Panier' }
   },
   { path: 'login', component: SigninComponent },
   { path: 'newAccount', component: SignupComponent },

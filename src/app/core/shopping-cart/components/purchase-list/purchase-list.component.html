@@ -1,0 +1,4 @@
+<div fxLayout="column" *ngFor="let product of products; last as isLast">
+  <app-purchase-list-item></app-purchase-list-item>
+  <mat-divider *ngIf="!isLast"></mat-divider>
+</div>

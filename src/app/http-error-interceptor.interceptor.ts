@@ -19,8 +19,10 @@ export class HttpErrorInterceptorInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<unknown>> {
     return next.handle(request).pipe(
       catchError((error) => {
-        if (error.status === 401 || error.status === 403) {
+        if (error.status === 404) {
           this.router.navigate(['/404']);
+        } else if (error.status === 401 || error.status === 403) {
+          this.router.navigate(['/accueil']);
         }
         return throwError(error.error || error.statusText);
       })
