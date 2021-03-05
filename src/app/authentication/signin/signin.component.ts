@@ -34,7 +34,8 @@ export class SigninComponent implements OnInit {
     if (this.formGroup.valid) {
       this.authenticationService.login(this.formGroup.value).subscribe(result => {
         if (result.token) {
-         alert("Super");
+          alert("Super");
+          location.reload();
         } else {
           alert("dommage");
         }

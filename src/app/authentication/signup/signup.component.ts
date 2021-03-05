@@ -35,11 +35,7 @@ export class SignupComponent implements OnInit {
   onSubmitSigninForm() {
     if (this.formGroup.valid) {
       this.authenticationService.createAccount(this.formGroup.value).subscribe(response => {
-        if (response.status == 201) {
-          this.router.navigateByUrl('/login');
-        } else {
-          alert("dommage");
-        }
+        this.router.navigateByUrl('/login');
       })
     }
   }
