@@ -12,6 +12,9 @@
         </ul>
       </nav>
       <div class="nav-actions" routerLinkActive="active">
+        <div *ngIf='this.token != null'>
+          <p>Bonjour {{ this.tokenInfo.login }} </p>
+        </div>
         <button mat-icon-button (click)="onSubmitLogin()">
           <img src="assets/img/account.svg" class="icon">
         </button>
