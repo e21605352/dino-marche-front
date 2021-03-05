@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-
 import { ProductService } from 'src/app/services/product.service';
-import { IProductItem as Product } from 'src/app/shared/interfaces/IProduct';
+import { IProduct, IProductItem } from 'src/app/shared/interfaces/IProduct';
+
 
 @Component({
   selector: 'app-goodies-list',
@@ -11,7 +11,7 @@ import { IProductItem as Product } from 'src/app/shared/interfaces/IProduct';
   styleUrls: ['./goodies-list.component.scss']
 })
 export class GoodiesListComponent implements OnInit {
-  products!: Product[];
+  products!: IProductItem[];
 
   constructor(private productService: ProductService, private router: Router) {}
 
@@ -21,8 +21,8 @@ export class GoodiesListComponent implements OnInit {
 
   retrieveProducts(): void {
     this.productService.getProductTypes('Goodie').subscribe(
-      (data: Product[]) => {
-        this.products = data;
+      (data: IProduct) => {
+        this.products = data.products;
       },
       (error: Observable<never>) => {
         console.log(error);

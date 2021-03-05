@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BreadcrumbService } from 'xng-breadcrumb';
 import { Observable } from 'rxjs';
-
 import { ProductService } from 'src/app/services/product.service';
-import { IProductItem as Product } from 'src/app/shared/interfaces/IProduct';
+import { IProductItem } from 'src/app/shared/interfaces/IProduct';
+import { BreadcrumbService } from 'xng-breadcrumb';
+
 
 @Component({
   selector: 'app-goodies-details',
@@ -12,7 +12,7 @@ import { IProductItem as Product } from 'src/app/shared/interfaces/IProduct';
   styleUrls: ['./goodies-details.component.scss']
 })
 export class GoodiesDetailsComponent implements OnInit {
-  product!: Product;
+  product!: IProductItem;
 
   constructor(
     private productService: ProductService,
@@ -26,7 +26,7 @@ export class GoodiesDetailsComponent implements OnInit {
 
   retrieveProduct(id: string): void {
     this.productService.getProduct(id).subscribe(
-      (data: Product) => {
+      (data: IProductItem) => {
         this.product = data;
         this.setBreadcrumbAlias();
       },
