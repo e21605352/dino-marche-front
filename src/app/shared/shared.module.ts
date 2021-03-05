@@ -21,6 +21,7 @@ import { BreadcrumbHeaderContactComponent } from './components/breadcrumb-header
 import { BreadcrumbHeaderCartComponent } from './components/breadcrumb-header-cart/breadcrumb-header-cart.component';
 
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ReviewListItemComponent } from './components/review-list-item/review-list-item.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     BreadcrumbHeaderHomeComponent,
     BreadcrumbHeaderContactComponent,
     BreadcrumbHeaderCartComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ReviewListItemComponent
   ],
   imports: [
     CommonModule,

@@ -9,4 +9,17 @@ import { IProductItem as Product } from '../../interfaces/IProduct';
 })
 export class ProductDetailsComponent {
   @Input() product!: Product;
+  quantity = 1;
+
+  test = [1, 2, 3, 4, 5];
+
+  doPlus(): void {
+    this.quantity++;
+  }
+
+  doMinus(): void {
+    if (this.quantity > 1) {
+      this.quantity--;
+    }
+  }
 }
