@@ -1,14 +1,9 @@
 <div fxLayout="column">
   <div fxLayout="row" fxLayoutAlign="start center">
-    <bar-rating rate='id' [max]="5" [readOnly]="true" theme=stars></bar-rating>
-    <h3 class="m-b-0 m-t-0 m-l-10">{{ title }}</h3>
+    <bar-rating [rate]="review.rate" [max]="5" [readOnly]="true" theme=stars></bar-rating>
+    <h3 class="m-b-0 m-t-0 m-l-10">{{ review.title }}</h3>
   </div>
   <p class="m-t-0">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt
-    lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at
-    sapien, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu,
-    tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum
-    turpis
-    at sapien
+    {{ review.description }}
   </p>
 </div>
