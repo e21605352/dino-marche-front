@@ -1,6 +1,6 @@
 <app-breadcrumb-header background="assets/img/dinosaur-header.png" title="Nos dinosaures"></app-breadcrumb-header>
-<div fxLayout="row" fxLayoutAlign="center start">
-  <div class="m-t-15" style="width: 100%; max-width: 1200px;">
+<div fxLayoutAlign="center start" class="content-container">
+  <div class="content-container-max">
     <app-product-list *ngIf="products" [products]="products" [route]="getUrl()"></app-product-list>
   </div>
 </div>

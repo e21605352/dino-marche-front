@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
+import { ProductService } from 'src/app/services/product.service';
 import { IProductItem as Product } from 'src/app/shared/interfaces/IProduct';
 
 @Component({
@@ -9,11 +11,24 @@ import { IProductItem as Product } from 'src/app/shared/interfaces/IProduct';
   styleUrls: ['./dinosaur-list.component.scss']
 })
 export class DinosaurListComponent implements OnInit {
-  products: Product[] = [];
+  products!: Product[];
 
-  constructor(private router: Router) {}
+  constructor(private productService: ProductService, private router: Router) {}
 
   ngOnInit(): void {
+    this.retrieveProducts();
+  }
+
+  retrieveProducts(): void {
+    this.productService.getProductTypes('Dinosaur').subscribe(
+      (data: Product[]) => {
+        this.products = data;
+      },
+      (error: Observable<never>) => {
+        console.log(error);
+      }
+    );
+    // TEMP
     this.products = [
       {
         id: '1',

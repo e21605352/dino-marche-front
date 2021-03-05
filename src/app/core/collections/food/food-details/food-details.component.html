@@ -1,1 +1,6 @@
 <app-breadcrumb-header background="assets/img/food-header.png" title="Notre nourriture"></app-breadcrumb-header>
+<div fxLayoutAlign="center start" class="content-container">
+  <div class="content-container-max">
+    <app-product-details *ngIf="product" [product]="product"></app-product-details>
+  </div>
+</div>

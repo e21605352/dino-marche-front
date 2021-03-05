@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SigninComponent } from './authentication/signin/signin.component';
 import { SignupComponent } from './authentication/signup/signup.component';
 import { ContactComponent } from './core/contact/contact.component';
-
+import { NotFoundComponent } from 'src/app/layout/not-found/not-found.component';
 const routes: Routes = [
   {
     path: '',
@@ -26,7 +26,9 @@ const routes: Routes = [
   },
   { path: 'login', component: SigninComponent },
   { path: 'newAccount', component: SignupComponent },
-  { path: 'contact', component: ContactComponent }
+  { path: 'contact', component: ContactComponent },
+  { path: '404', component: NotFoundComponent },
+  { path: '**', redirectTo: '/404' }
 ];
 
 @NgModule({

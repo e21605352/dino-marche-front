@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BreadcrumbModule } from 'xng-breadcrumb';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { SharedModule } from '../../../shared/shared.module';
 import { DinosaurListComponent } from './dinosaur-list/dinosaur-list.component';
@@ -32,7 +33,8 @@ export const dinosaurRouteList: Routes = [
     RouterModule.forChild(dinosaurRouteList),
     FlexLayoutModule,
     BreadcrumbModule,
-    SharedModule
+    SharedModule,
+    MatDividerModule
   ]
 })
 export class DinosaurModule {}

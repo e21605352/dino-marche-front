@@ -16,7 +16,6 @@ import { SharedModule } from './shared/shared.module';
 import { SignupComponent } from './authentication/signup/signup.component';
 import { TokenManager } from './authentication/tokenManager/TokenManager';
 
-
 registerLocaleData(localeFr, 'fr');
 
 @NgModule({
@@ -39,4 +38,4 @@ registerLocaleData(localeFr, 'fr');
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

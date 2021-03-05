@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { BreadcrumbService } from 'xng-breadcrumb';
+import { Observable } from 'rxjs';
 
+import { ProductService } from 'src/app/services/product.service';
 import { IProductItem as Product } from 'src/app/shared/interfaces/IProduct';
 
 @Component({
@@ -13,14 +15,23 @@ export class DinosaurDetailsComponent implements OnInit {
   product!: Product;
 
   constructor(
+    private productService: ProductService,
     private breadcrumbService: BreadcrumbService,
-    private route: ActivatedRoute,
-    private router: Router
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     this.retrieveProduct(this.route.snapshot.paramMap.get('id') as string);
+  }
 
+  retrieveProduct(id: string): void {
+    this.productService.getProduct(id).subscribe(
+      (data: Product) => {
+        this.product = data;
+        this.setBreadcrumbAlias();
+      },
+      (error: Observable<never>) => console.log(error)
+    );
     // TEMP
     this.product = {
       id: '5',
@@ -34,20 +45,6 @@ export class DinosaurDetailsComponent implements OnInit {
       price: 2651,
       type: 'Dinosaur'
     };
-
-    this.setBreadcrumbAlias();
-  }
-
-  retrieveProduct(id: string): void {
-    // this.habilitationService.get(id).subscribe(
-    //   (data) => {
-    //     this.habilitation = data;
-    //     this.setBreadcrumbAlias();
-    //   },
-    //   (error) => {
-    //     console.log(error);
-    //   }
-    // );
   }
 
   private setBreadcrumbAlias(): void {

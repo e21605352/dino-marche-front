@@ -18,13 +18,15 @@ import { NavigationComponent } from './navigation/view/navigation.component';
 import { HandsetNavigationComponent } from './navigation/components/handset-navigation/handset-navigation.component';
 import { FullscreenNavigationComponent } from './navigation/components/fullscreen-navigation/fullscreen-navigation.component';
 import { SideNavigationComponent } from './navigation/components/side-navigation/side-navigation.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     NavigationComponent,
     HandsetNavigationComponent,
     FullscreenNavigationComponent,
-    SideNavigationComponent
+    SideNavigationComponent,
+    NotFoundComponent
   ],
   imports: [
     CommonModule,

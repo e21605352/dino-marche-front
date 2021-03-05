@@ -33,9 +33,42 @@ $custom-primary: (
     )
 );
 
+$custom-accent: (
+    50 : #e9eee4,
+    100 : #c9d5bc,
+    200 : #a5b990,
+    300 : #819c64,
+    400 : #668742,
+    500 : #4b7221,
+    600 : #446a1d,
+    700 : #3b5f18,
+    800 : #335514,
+    900 : #23420b,
+    A100 : #aeff7a,
+    A200 : #8fff47,
+    A400 : #70ff14,
+    A700 : #62fa00,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
 // Default theme
 $dino-marche-front-primary: mat-palette($custom-primary);
-$dino-marche-front-accent: mat-palette($mat-pink, A200, A100, A400);
+$dino-marche-front-accent: mat-palette($custom-accent);
 $dino-marche-front-warn: mat-palette($mat-red);
 
 $dino-marche-front-theme: mat-light-theme((

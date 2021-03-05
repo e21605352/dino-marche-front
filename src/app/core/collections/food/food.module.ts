@@ -19,7 +19,7 @@ export const foodRouteList: Routes = [
     component: FoodDetailsComponent,
     data: {
       breadcrumb: {
-        alias: 'goodiesName'
+        alias: 'foodName'
       }
     }
   }
