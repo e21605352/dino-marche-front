@@ -11,3 +11,7 @@ export interface IProductItem {
   price: number;
   type: productType;
 }
+
+export interface IProduct {
+  products: IProductItem[];
+}
