@@ -28,3 +28,8 @@ a:hover { text-decoration: underline; }
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+
+.product-image {
+  max-width: 250px;
+  width: 100%;
+}

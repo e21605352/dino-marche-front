@@ -14,7 +14,7 @@ export class ProductListComponent implements OnInit {
   @Input() route!: string;
 
   displayedProducts!: Product[];
-  pageSize = 3;
+  pageSize = 10;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 

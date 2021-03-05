@@ -1,6 +1,8 @@
 <div fxLayout="row" fxLayout.xs="column wrap" fxLayoutAlign="left center" class="product-item">
   <div fxFlex>
-    <img [src]="product.image" height="180px" class="logo">
+    <div fxFlexAlign="center center" class="product-image">
+      <img [src]="product.image" width="250px" height="auto">
+    </div>
   </div>
   <div fxFlex="column" fxFlexFill fxFlexAlign="center" class="product-content">
     <a [href]="route">
