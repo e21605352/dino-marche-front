@@ -16,7 +16,7 @@
     <div fxLayout="row" fxLayoutAlign="space-between center" class="p-t-10">
       <div fxLayout="row" fxLayoutAlign="start center">
         <div class="mat-display-1 m-b-0">{{ product.price * quantity }} €</div>
-        <div fxLayout="row" fxLayoutAlign="start center" class="m-l-10">
+        <div *ngIf='this.token != null' fxLayout="row" fxLayoutAlign="start center" class="m-l-10">
           <button mat-icon-button (click)="doPlus()">
             <mat-icon>add</mat-icon>
           </button>
@@ -26,17 +26,17 @@
           </button>
         </div>
       </div>
-      <button mat-flat-button color="primary">Ajouter au panier</button>
+      <button *ngIf='this.token != null' mat-flat-button color="primary">Ajouter au panier</button>
     </div>
     <div fxLayoutAlign="end center" class="m-t-20">
-      <img src="assets/img/payment-secure.png" height="50px">
+      <img *ngIf='this.token != null' src="assets/img/payment-secure.png" height="50px">
     </div>
   </div>
 </div>
 <mat-divider></mat-divider>
 <div fxLayout="row" fxLayoutAlign="space-between center">
   <h1>Avis clients</h1>
-  <button mat-flat-button color="accent">Ecrire un avis</button>
+  <button *ngIf='this.token != null' mat-flat-button color="accent">Ecrire un avis</button>
 </div>
 <div fxLayout="column" *ngFor="let i of test;">
   <app-review-list-item></app-review-list-item>

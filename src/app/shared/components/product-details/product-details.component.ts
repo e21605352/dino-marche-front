@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { IProductItem as Product } from '../../interfaces/IProduct';
+import { TokenManager } from 'src/app/authentication/tokenManager/TokenManager';
 
 @Component({
   selector: 'app-product-details',
@@ -10,7 +11,10 @@ import { IProductItem as Product } from '../../interfaces/IProduct';
 export class ProductDetailsComponent {
   @Input() product!: Product;
   quantity = 1;
-
+  public token: any;
+  constructor(private tokenManager: TokenManager) {
+    this.token = tokenManager.retrieve();
+  }
   test = [1, 2, 3, 4, 5];
 
   doPlus(): void {
