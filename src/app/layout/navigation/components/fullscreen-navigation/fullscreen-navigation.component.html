@@ -18,8 +18,12 @@
         <button mat-icon-button (click)="onSubmitLogin()">
           <img src="assets/img/account.svg" class="icon">
         </button>
-        <button mat-icon-button matBadge="" matBadgePosition="after" matBadgeColor="primary" matBadgeSize="small"
-          (click)="onSubmitCart()">
+        <button *ngIf='this.token != null' mat-icon-button matBadge="" matBadgePosition="after" matBadgeColor="primary"
+          matBadgeSize="small" (click)="onSubmitCart()">
+          <img matBadge="15" matBadgeColor="warn" src="assets/img/shopping-cart.svg" class="icon">
+        </button>
+        <button *ngIf='this.token == null' mat-icon-button matBadge="" matBadgePosition="after" matBadgeColor="primary"
+          matBadgeSize="small" (click)="onSubmitLogin()">
           <img matBadge="15" matBadgeColor="warn" src="assets/img/shopping-cart.svg" class="icon">
         </button>
       </div>

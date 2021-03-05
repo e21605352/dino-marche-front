@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavigationBarService } from 'src/app/shared/services/navigation-bar.service';
 import { Router } from '@angular/router';
+import { TokenManager } from 'src/app/authentication/tokenManager/TokenManager';
 
 @Component({
   selector: 'app-handset-navigation',
@@ -8,7 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./handset-navigation.component.scss']
 })
 export class HandsetNavigationComponent {
-  constructor(private navigationBarService: NavigationBarService, private router: Router) { }
+
+  public token: any;
+  constructor(private navigationBarService: NavigationBarService, private router: Router, private tokenManager: TokenManager) {
+    this.token = tokenManager.retrieve();
+  }
 
   toggleDrawer(): void {
     this.navigationBarService.toggle();
