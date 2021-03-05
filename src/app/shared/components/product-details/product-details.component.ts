@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ReviewFormComponent } from '../review-form/review-form.component';
 
 import { IProductItem as Product } from '../../interfaces/IProduct';
 import { TokenManager } from 'src/app/authentication/tokenManager/TokenManager';
@@ -12,7 +14,11 @@ export class ProductDetailsComponent {
   @Input() product!: Product;
   quantity = 1;
   public token: any;
-  constructor(private tokenManager: TokenManager) {
+
+  constructor(
+    private reviewForm: MatDialog,
+    private tokenManager: TokenManager
+  ) {
     this.token = tokenManager.retrieve();
   }
   test = [1, 2, 3, 4, 5];
@@ -25,5 +31,18 @@ export class ProductDetailsComponent {
     if (this.quantity > 1) {
       this.quantity--;
     }
+  }
+
+  openReviewForm(): void {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '60%';
+
+    const dialogRef = this.reviewForm.open(ReviewFormComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result.event == 'send') {
+        console.log('REFRESH');
+      }
+    });
   }
 }

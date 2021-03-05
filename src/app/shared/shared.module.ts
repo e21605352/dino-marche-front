@@ -4,6 +4,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSelectModule } from '@angular/material/select';
@@ -19,9 +21,11 @@ import { ProductListSortComponent } from './components/product-list-sort/product
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { BreadcrumbHeaderContactComponent } from './components/breadcrumb-header-contact/breadcrumb-header-contact.component';
 import { BreadcrumbHeaderCartComponent } from './components/breadcrumb-header-cart/breadcrumb-header-cart.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ReviewListItemComponent } from './components/review-list-item/review-list-item.component';
+import { ReviewFormComponent } from './components/review-form/review-form.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,8 @@ import { ReviewListItemComponent } from './components/review-list-item/review-li
     BreadcrumbHeaderContactComponent,
     BreadcrumbHeaderCartComponent,
     ProductDetailsComponent,
-    ReviewListItemComponent
+    ReviewListItemComponent,
+    ReviewFormComponent
   ],
   imports: [
     CommonModule,
@@ -48,7 +53,11 @@ import { ReviewListItemComponent } from './components/review-list-item/review-li
     MatPaginatorModule,
     MatTooltipModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   exports: [
     ProductListItemComponent,
