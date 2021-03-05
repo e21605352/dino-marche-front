@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ProductService } from 'src/app/services/product.service';
-import { IProduct, IProductItem } from 'src/app/shared/interfaces/IProduct';
+import { IProductItem, IProducts } from 'src/app/shared/interfaces/IProduct';
 
 @Component({
   selector: 'app-dinosaur',
@@ -20,7 +20,7 @@ export class DinosaurListComponent implements OnInit {
 
   retrieveProducts(): void {
     this.productService.getProductTypes('Dinosaur').subscribe(
-      (data: IProduct) => {
+      (data: IProducts) => {
         this.products = data.products;
       },
       (error: Observable<never>) => {
