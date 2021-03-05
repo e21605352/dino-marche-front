@@ -24,6 +24,6 @@ export class HandsetNavigationComponent {
   }
 
   onSubmitCart() {
-    this.router.navigateByUrl('/collections/shopping-cart');
+    this.router.navigateByUrl('/panier');
   }
 }

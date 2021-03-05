@@ -33,6 +33,6 @@ export class FullscreenNavigationComponent {
   }
 
   onSubmitCart() {
-    this.router.navigateByUrl('/collections/shopping-cart');
+    this.router.navigateByUrl('/panier');
   }
 }

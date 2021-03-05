@@ -15,8 +15,7 @@ export class SigninComponent implements OnInit {
 
   constructor(
     private authenticationService: AuthenticationService,
-    private router: Router,
-    private tokenManager: TokenManager
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -35,7 +34,7 @@ export class SigninComponent implements OnInit {
       this.authenticationService.login(this.formGroup.value).subscribe(result => {
         if (result.token) {
           alert("Super");
-          location.reload();
+          this.router.navigateByUrl('/accueil');
         } else {
           alert("dommage");
         }

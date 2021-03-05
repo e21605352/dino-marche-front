@@ -33,9 +33,13 @@ const routes: Routes = [
       ),
     data: { breadcrumb: 'Panier' }
   },
+  {
+    path: 'contact',
+    loadChildren: () =>
+      import('./core/contact/contact.module').then((m) => m.ContactModule)
+  },
   { path: 'login', component: SigninComponent },
   { path: 'newAccount', component: SignupComponent },
-  { path: 'contact', component: ContactComponent },
   { path: '404', component: NotFoundComponent },
   { path: '**', redirectTo: '/404' }
 ];
@@ -44,4 +48,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

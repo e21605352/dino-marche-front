@@ -13,6 +13,7 @@ import { MatDividerModule } from '@angular/material/divider';
 
 import { HandsetLayoutService } from 'src/app/shared/services/handset-layout.service';
 import { NavigationBarService } from 'src/app/shared/services/navigation-bar.service';
+import { SharedModule } from '../shared/shared.module';
 
 import { NavigationComponent } from './navigation/view/navigation.component';
 import { HandsetNavigationComponent } from './navigation/components/handset-navigation/handset-navigation.component';
@@ -38,9 +39,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MatListModule,
     MatBadgeModule,
     MatIconModule,
-    MatDividerModule
+    MatDividerModule,
+    SharedModule
   ],
   providers: [HandsetLayoutService, NavigationBarService],
   exports: [NavigationComponent]
 })
-export class AppLayoutModule {}
+export class AppLayoutModule { }
