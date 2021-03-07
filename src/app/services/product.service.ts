@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { IProduct, IProductItem } from '../shared/interfaces/IProduct.d';
+import { IProductItem, IProducts } from '../shared/interfaces/IProduct.d';
 import { productType } from '../types/productType';
 
 
@@ -17,17 +17,17 @@ export class ProductService {
   /**
    * Récupération de tous les produits.
    */
-  getAll(): Observable<IProduct> {
-    return this.http.get<IProduct>(baseUrl);
+  getAll(): Observable<IProducts> {
+    return this.http.get<IProducts>(baseUrl);
   }
 
   /**
    * Récupération de tous les produits d'un certain type.
    * @param type
    */
-  getProductTypes(type: productType): Observable<IProduct> {
+  getProductTypes(type: productType): Observable<IProducts> {
     const params = new HttpParams().set('type', type);
-    return this.http.get<IProduct>(`${baseUrl}`, { params });
+    return this.http.get<IProducts>(`${baseUrl}`, { params });
   }
 
   /**

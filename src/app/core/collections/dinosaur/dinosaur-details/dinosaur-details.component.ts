@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BreadcrumbService } from 'xng-breadcrumb';
 import { Observable } from 'rxjs';
-
 import { ProductService } from 'src/app/services/product.service';
 import { IProductItem as Product } from 'src/app/shared/interfaces/IProduct';
+import { environment } from 'src/environments/environment';
+import { BreadcrumbService } from 'xng-breadcrumb';
+
 
 @Component({
   selector: 'app-dinosaur-details',
@@ -27,31 +28,14 @@ export class DinosaurDetailsComponent implements OnInit {
   retrieveProduct(id: string): void {
     this.productService.getProduct(id).subscribe(
       (data: Product) => {
+        console.log(data);
         this.product = data;
+        console.log(data.images);
+        this.product.images = `${environment.baseUrl}${(data.images as unknown as string[])[0]}`;
         this.setBreadcrumbAlias();
       },
       (error: Observable<never>) => console.log(error)
     );
-    // TEMP
-    this.product = {
-      id: '5',
-      image: 'assets/img/tyrannosaurus_rex.png',
-      name: 'Graou graou le dino',
-      alias: 'Lézard à bras',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget nulla suscipit, dictum velit eu, tincidunt lectus. Nulla at massa sit amet orci cursus molestie. Praesent sed dolor eros. Maecenas condimentum turpis at sapien',
-      rate: 3,
-      reviewsNumber: 54,
-      price: 2651,
-      type: 'Dinosaur',
-      reviews: [
-        {
-          rate: 4,
-          title: 'vraiment bien',
-          description: 'bla bla bla '
-        }
-      ]
-    };
   }
 
   private setBreadcrumbAlias(): void {

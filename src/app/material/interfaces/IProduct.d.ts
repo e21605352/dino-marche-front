@@ -3,7 +3,7 @@ import type { IReview } from './IReview';
 
 export interface IProductItem {
   id?: string;
-  images: string;
+  image: string;
   name: string;
   alias: string;
   description: string;
