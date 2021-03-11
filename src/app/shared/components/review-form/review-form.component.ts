@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { BarRating } from 'ngx-bar-rating';
+import { ReviewService } from 'src/app/services/review.service';
+
 @Component({
   selector: 'app-review-form',
   templateUrl: './review-form.component.html',
@@ -8,10 +11,13 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class ReviewFormComponent implements OnInit {
   reviewForm!: FormGroup;
+  rate = 1;
 
   constructor(
+    @Inject(MAT_DIALOG_DATA) public productId: string,
     public dialogRef: MatDialogRef<ReviewFormComponent>,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private reviewService: ReviewService
   ) {}
 
   ngOnInit(): void {
@@ -20,7 +26,7 @@ export class ReviewFormComponent implements OnInit {
 
   private initFormBuilder(): void {
     this.reviewForm = this.formBuilder.group({
-      rate: [1],
+      rating: [3],
       title: ['', Validators.required],
       description: ['', Validators.required]
     });
@@ -28,7 +34,17 @@ export class ReviewFormComponent implements OnInit {
 
   sendReview(): void {
     if (this.reviewForm.valid) {
-      this.dialogRef.close({ event: 'send' });
+      this.reviewService
+        .postReview(this.productId, this.reviewForm.value)
+        .subscribe(
+          (response) => {
+            console.log(response);
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+      this.dialogRef.close({ event: 'sent' });
     }
   }
 

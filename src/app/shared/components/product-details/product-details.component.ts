@@ -36,6 +36,7 @@ export class ProductDetailsComponent {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.width = '60%';
+    dialogConfig.data = this.product.id;
 
     const dialogRef = this.reviewForm.open(ReviewFormComponent, dialogConfig);
     dialogRef.afterClosed().subscribe((result) => {
