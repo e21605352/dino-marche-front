@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { BarRating } from 'ngx-bar-rating';
-import { ReviewService } from 'src/app/services/review.service';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-review-form',
@@ -17,7 +17,7 @@ export class ReviewFormComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public productId: string,
     public dialogRef: MatDialogRef<ReviewFormComponent>,
     private formBuilder: FormBuilder,
-    private reviewService: ReviewService
+    private productService: ProductService
   ) {}
 
   ngOnInit(): void {
@@ -26,15 +26,15 @@ export class ReviewFormComponent implements OnInit {
 
   private initFormBuilder(): void {
     this.reviewForm = this.formBuilder.group({
-      rating: [3],
+      rate: [3],
       title: ['', Validators.required],
-      description: ['', Validators.required]
+      text: ['', Validators.required]
     });
   }
 
   sendReview(): void {
     if (this.reviewForm.valid) {
-      this.reviewService
+      this.productService
         .postReview(this.productId, this.reviewForm.value)
         .subscribe(
           (response) => {

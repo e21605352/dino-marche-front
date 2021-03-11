@@ -2,7 +2,9 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { TokenManager } from '../authentication/tokenManager/TokenManager';
 import { IProductItems, IProduct } from '../shared/interfaces/IProduct.d';
+import { IReview } from '../shared/interfaces/IReview';
 import { productType } from '../types/productType';
 
 const baseUrl = `${environment.baseUrl}/product`;
@@ -11,7 +13,11 @@ const baseUrl = `${environment.baseUrl}/product`;
   providedIn: 'root'
 })
 export class ProductService {
-  constructor(private http: HttpClient) {}
+  private token: string;
+
+  constructor(private http: HttpClient, private tokenManager: TokenManager) {
+    this.token = tokenManager.retrieve() || '';
+  }
 
   /**
    * Récupération de tous les produits.
@@ -35,5 +41,18 @@ export class ProductService {
    */
   getProduct(id: string): Observable<IProduct> {
     return this.http.get<IProduct>(`${baseUrl}/${id}`);
+  }
+
+  postReview(id: string, review: IReview): Observable<IReview> {
+    const headers = { Authorization: this.token };
+    const options = {
+      headers: headers
+    };
+
+    return this.http.post<IReview>(
+      `${baseUrl}/${id}/feedback`,
+      review,
+      options
+    );
   }
 }
