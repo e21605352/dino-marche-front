@@ -3,7 +3,7 @@ import type { IReview } from './IReview';
 
 export interface IProductItem {
   id?: string;
-  images: string;
+  images: string[];
   name: string;
   alias: string;
   description: string;
@@ -11,10 +11,14 @@ export interface IProductItem {
   reviewsNumber: number;
   price: number;
   type: productType;
-  reviews?: IReview[];
 }
 
-export interface IProducts {
+export interface IProduct extends IProductItem {
+  reviews: IReview[];
+}
+
+export interface IProductItems {
   products: IProductItem[];
 }
 
+export type IProductListItems = IProductItem[];

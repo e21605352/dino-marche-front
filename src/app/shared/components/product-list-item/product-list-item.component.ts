@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IProductItem as Product } from '../../interfaces/IProduct';
+import { IProductItem } from '../../interfaces/IProduct';
 
 @Component({
   selector: 'app-product-list-item',
@@ -7,6 +7,6 @@ import { IProductItem as Product } from '../../interfaces/IProduct';
   styleUrls: ['./product-list-item.component.scss']
 })
 export class ProductListItemComponent {
-  @Input() product!: Product;
+  @Input() product!: IProductItem;
   @Input() route!: string;
 }

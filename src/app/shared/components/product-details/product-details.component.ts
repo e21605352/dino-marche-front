@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ReviewFormComponent } from '../review-form/review-form.component';
 
-import { IProductItem as Product } from '../../interfaces/IProduct';
+import { IProduct } from '../../interfaces/IProduct';
 import { TokenManager } from 'src/app/authentication/tokenManager/TokenManager';
 
 @Component({
@@ -11,7 +11,7 @@ import { TokenManager } from 'src/app/authentication/tokenManager/TokenManager';
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent {
-  @Input() product!: Product;
+  @Input() product!: IProduct;
   quantity = 1;
   public token: any;
 

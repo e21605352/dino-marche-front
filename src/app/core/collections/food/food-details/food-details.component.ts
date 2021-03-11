@@ -2,10 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ProductService } from 'src/app/services/product.service';
-import { IProductItem as Product } from 'src/app/shared/interfaces/IProduct';
-import { environment } from "src/environments/environment";
+import { IProduct } from 'src/app/shared/interfaces/IProduct';
 import { BreadcrumbService } from 'xng-breadcrumb';
-
 
 @Component({
   selector: 'app-food-details',
@@ -13,7 +11,7 @@ import { BreadcrumbService } from 'xng-breadcrumb';
   styleUrls: ['./food-details.component.scss']
 })
 export class FoodDetailsComponent implements OnInit {
-  product!: Product;
+  product!: IProduct;
 
   constructor(
     private productService: ProductService,
@@ -27,9 +25,8 @@ export class FoodDetailsComponent implements OnInit {
 
   retrieveProduct(id: string): void {
     this.productService.getProduct(id).subscribe(
-      (data: Product) => {
+      (data: IProduct) => {
         this.product = data;
-        this.product.images = `${environment.baseUrl}${(data.images as unknown as string[])[0]}`;
         this.setBreadcrumbAlias();
       },
       (error: Observable<never>) => console.log(error)
